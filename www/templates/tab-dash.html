@@ -1,0 +1,124 @@
+<ion-view view-title="Add place">
+  <ion-content  scroll="true"
+               class="world">
+
+
+    <div class="padding" ng-controller="PlaceCreateCtrl">
+      <form name="myForm">
+
+
+        <div class="list">
+          <label class="item item-input item-select">
+            <div class="input-label"> Language</div>
+            <select ng-model="place.language">
+              <option value="EN">EN</option>
+              <option value="CN">CN</option>
+              <option value="TH">TH</option>
+
+            </select>
+          </label>
+        </div>
+
+        <div class="list">
+          <label class="item item-input item-select">
+            <div class="input-label"> Type</div>
+            <select ng-model="place.type">
+              <option value="Landmark">Landmark</option>
+              <option value="Culture">Culture</option>
+              <option value="Food">Food</option>
+              <option value="Shopping">Shopping</option>
+              <option value="other">other</option>
+
+            </select>
+          </label>
+        </div>
+        <label class="item item-input">
+          <span class="input-label">Name</span>
+          <input type="text" ng-model="place.name" placeholder=":" required>
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">PlaceDescription</span>
+          <input type="text" ng-model="place.description" placeholder=":" required>
+        </label>
+
+        <b>Location</b><br>
+        <button class="button button-dark" ng-click="getlocation()">
+          Get Location
+        </button>
+
+        <label class="item item-input">
+          <span class="input-label">Latitude</span>
+          <input type="number" ng-model="place.la" placeholder=":" required>
+        </label>
+
+        <label class="item item-input ">
+          <span class="input-label">Longitude</span>
+          <input type="number" ng-model="place.ln" placeholder=":" required>
+        </label>
+
+        <b>Contact</b><br>
+        <label class="item item-input">
+          <span class="input-label">Name</span>
+          <input type="text" ng-model="place.contactName" placeholder=":"  required></label>
+        <label class="item item-input ">
+          <span class="input-label">Phone number</span>
+          <input type="text" ng-model="place.phoneNumber" placeholder=":" required></label>
+        <label class="item item-input ">
+          <span class="input-label">Address</span>
+          <input type="text" ng-model="place.address" placeholder=":"  required></label>
+        <label class="item item-input ">
+          <span class="input-label">Website</span>
+          <input type="text" ng-model="place.website" placeholder=":" required></label>
+        <label class="item item-input">
+          <span class="input-label">OpenTime</span>
+          <input type="text" ng-model="place.openTime" placeholder=":"  required></label>
+        <label class="item item-input ">
+          <span class="input-label">CloseTime</span>
+          <input type="text" ng-model="place.closeTime" placeholder=":" required></label>
+        <label class="item item-input ">
+          <span class="input-label">WorkingDay</span>
+          <input type="text" ng-model="place.workingDay" placeholder=":"  required></label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Note</span>
+          <input type="text" ng-model="place.note" placeholder=":" required></label>
+        <b>Question</b><br>
+        <label class="item item-input ">
+          <span class="input-label">Question</span>
+          <input type="text" ng-model="place.question" placeholder=":" required></label>
+        <label class="item item-input ">
+          <span class="input-label">Answer1</span>
+          <input type="text" ng-model="place.answer1" placeholder=":" required></label>
+        <label class="item item-input ">
+          <span class="input-label">Answer2</span>
+          <input type="text" ng-model="place.answer2" placeholder=":" required></label>
+        <label class="item item-input ">
+          <span class="input-label">Answer3</span>
+          <input type="text" ng-model="place.answer3" placeholder=":" required></label>
+        <label class="item item-input ">
+          <span class="input-label">Answer4</span>
+          <input type="text" ng-model="place.answer4" placeholder=":"  required></label>
+        <label class="item item-input ">
+          <span class="input-label">Score</span>
+          <input type="text" ng-model="place.score" placeholder=":"  required></label>
+
+        <div class="list">
+          <label class="item item-input item-select">
+            <div class="input-label"> Solution</div>
+            <select ng-model="place.solution">
+              <option value="answer1">answer1</option>
+              <option value="answer2">answer2</option>
+              <option value="answer3">answer3</option>
+              <option value="answer4">answer4</option>
+
+            </select>
+          </label>
+        </div>
+        <input type="file" name="file" onchange="angular.element(this).scope().uploadFile(this.files)"/>
+        <br>
+        <button type="submit" class="button button-large button-stable" value="submit" ng-click="addplace()">Submit</button>
+      </form>
+
+    </div>
+
+  </ion-content>
+</ion-view>
